@@ -1,20 +1,54 @@
+
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
-  url('../fonts/Roboto/Roboto-Regular.woff') format('woff'),
-  url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Lato';
+	src: url('../fonts/Lato/Lato-Semibold.eot');
+	src: url('../fonts/Lato/Lato-Semibold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lato/Lato-Semibold.woff2') format('woff2'),
+	url('../fonts/Lato/Lato-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto-Medium';
-  src: url('../fonts/Roboto/Roboto-Medium.woff2') format('woff2'),
-  url('../fonts/Roboto/Roboto-Medium.woff') format('woff'),
-  url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway/Raleway-ExtraBold.eot');
+	src: url('../fonts/Raleway/Raleway-ExtraBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Raleway/Raleway-ExtraBold.woff2') format('woff2'),
+	url('../fonts/Raleway/Raleway-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
 }
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/Lato/Lato-Bold.eot');
+	src: url('../fonts/Lato/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lato/Lato-Bold.woff2') format('woff2'),
+	url('../fonts/Lato/Lato-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/Lato/Lato-Regular.eot');
+	src: url('../fonts/Lato/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lato/Lato-Regular.woff2') format('woff2'),
+	url('../fonts/Lato/Lato-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('../fonts/Lato/Lato-Heavy.eot');
+	src: url('../fonts/Lato/Lato-Heavy.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Lato/Lato-Heavy.woff2') format('woff2'),
+	url('../fonts/Lato/Lato-Heavy.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
 
 
 

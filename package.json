@@ -10,8 +10,7 @@
     "component:create": "node scripts/component/create.js",
     "component:remove": "node scripts/component/remove.js",
     "page:create": "node scripts/page/create.js",
-    "page:remove": "node scripts/page/remove.js",
-    "fonts:refresh": "node scripts/refresh-fonts.js"
+    "page:remove": "node scripts/page/remove.js"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,7 @@
     "disable-output-webpack-plugin": "^1.0.1",
     "extract-loader": "^2.0.1",
     "file-loader": "^1.1.11",
+    "font-awesome": "^4.7.0",
     "form-serialize": "^0.7.2",
     "handlebars": "^4.0.12",
     "happypack": "^5.0.0",
