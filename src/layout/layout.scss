@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    flex-direction: column;
+    color: $color-gray-4;
+
+    &.fixed {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+}
+
+.body__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $color-gray-1;
+
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.page-container {
+  width: 100%;
+  max-width: $breakpoint-5;
+  padding: 0 8px;
+  margin: 0 auto;
+}
+
+.scroll-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.v-contain {
+  padding-top: $header-height;
+
+  @media screen and (max-width: $breakpoint-3 - 1)  {
+    padding-top: $header-height * 1.5;
+  }
+}
+
+button {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  :focus {
+    outline: none;
+  }
+}
+
+a {
+  color: inherit;
+
+  &:focus, &:active {
+    color: inherit;
+  }
+}
+
+select {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+option {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+

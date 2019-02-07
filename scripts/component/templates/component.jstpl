@@ -1,0 +1,14 @@
+import Component from '../../common/component';
+
+class ${componentClassName} extends Component {
+    constructor(nRoot, componentName) {
+        super(nRoot, componentName);
+    }
+
+    destroy() {
+
+    }
+}
+Component.register(${componentClassName}, '${componentName}');
+${componentClassName}.initialize();
+export default ${componentClassName}.instances;

@@ -1,0 +1,156 @@
+.table-row {
+  display: flex;
+  border-bottom: 1px solid $color-gray-2;
+  padding: 3px 0;
+
+  @media screen and (max-width: $breakpoint-3 - 1)  {
+    width: calc(50% - #{$gutter/2});
+    flex: 0 0 auto;
+    border: 1px solid $color-gray-2;
+    padding: $gutter/2 0;
+    margin-right: $gutter/2;
+    margin-bottom: $gutter/2;
+
+    :nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-2 - 1)  {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
+
+  &__head {
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+       display: none;
+    }
+  }
+
+  &__part {
+    display: flex;
+    align-items: center;
+  }
+
+  &__part-2 {
+    flex: 1 0 auto;
+    padding: 0 $gutter/2;
+    //@media screen and (max-width: $breakpoint-3 - 1)  {
+    //  padding-left: 0;
+    //}
+  }
+
+  &__check {
+    width: 32px;
+    height: 100%;
+  }
+
+  &__main {
+    display: flex;
+    margin: 0  $gutter/-2;
+    flex: 1 0 auto;
+
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+      flex-direction: column;
+    }
+  }
+
+  &__cell-1 {
+    flex: 0 1 8.3%;
+    //max-width: 8.3%;
+    min-width: calc(96px + #{$gutter});
+  }
+
+  &__cell-2 {
+    flex: 0 1 15.65%;
+    min-width: calc(192px + #{$gutter});
+  }
+
+  &__cell-3 {
+    flex: 0 1 13.15%;
+    max-width: 13.15%;
+    min-width: calc(160px + #{$gutter});
+  }
+
+  &__cell {
+    padding: $gutter/4 $gutter/2;
+    display: flex;
+    align-items: center;
+
+    > * {
+      width: 100%;
+    }
+
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: none;
+      flex-direction: column;
+    }
+  }
+
+  &__cell-4 {
+    flex: 1 0 auto;
+    max-width: calc(100vw - (calc(96px + 192px + 160px + #{$gutter*6}));
+
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+      max-width: calc(50vw - (calc(32px + #{$gutter*2} - #{$gutter/4}));
+    }
+
+    @media screen and (max-width: $breakpoint-2 - 1)  {
+      max-width: calc(100vw - (calc(32px + #{$gutter*2}));
+    }
+  }
+
+
+
+  &__title {
+    @include title-2;
+    padding: 12px 0;
+
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+      padding: 0;
+      @include font-3;
+    }
+  }
+
+  &__title-mobile {
+    display: none;
+    @media screen and (max-width: $breakpoint-3 - 1)  {
+      display: block;
+    }
+
+  }
+
+  &__id {
+    @include  font-1;
+    padding: 8px 0;
+  }
+
+  &__check {
+    position: relative;
+  }
+
+  &__check-label {
+    display: block;
+  }
+
+  &__check-bg {
+    @include checkbox;
+  }
+
+  &__check-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__check-input:checked  + &__check-bg {
+  @include checkbox-checked;
+  }
+
+
+
+
+}

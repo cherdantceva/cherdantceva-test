@@ -1,0 +1,72 @@
+.select {
+
+  &__field {
+    width: 100%;
+  }
+
+  //стили для choices.js
+
+  .choices {
+
+
+    &__inner {
+      @include font-2;
+      @include input-style;
+      min-height: auto;
+    }
+
+    &__list {
+
+
+      &--single {
+        padding: 0;
+      }
+
+      &--dropdown {
+        @include input-style;
+        padding: 0;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transform-origin: top;
+        transition: 0.2s all ease-out;
+
+        &.is-active {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .choices__item {
+          @include font-2;
+          padding: $gutter/2;
+          border-bottom: 1px solid $color-gray-2;
+        }
+      }
+
+    }
+
+    &__item {
+
+      &--selectable {
+        &.is-highlighted {
+          background: $color-gray-7;
+        }
+      }
+
+    }
+
+    &[data-type*=select-one]:after {
+      border: none;
+      width: 9px;
+      height: 20px;
+      margin: 0;
+      transform: translateY(-50%);
+      background-position: center;
+      background-size: 9px auto;
+      background-repeat: no-repeat;
+      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA0NTEuODQ3IDQ1MS44NDciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1MS44NDcgNDUxLjg0NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGQ9Ik0yMjUuOTIzLDM1NC43MDZjLTguMDk4LDAtMTYuMTk1LTMuMDkyLTIyLjM2OS05LjI2M0w5LjI3LDE1MS4xNTdjLTEyLjM1OS0xMi4zNTktMTIuMzU5LTMyLjM5NywwLTQ0Ljc1MSAgIGMxMi4zNTQtMTIuMzU0LDMyLjM4OC0xMi4zNTQsNDQuNzQ4LDBsMTcxLjkwNSwxNzEuOTE1bDE3MS45MDYtMTcxLjkwOWMxMi4zNTktMTIuMzU0LDMyLjM5MS0xMi4zNTQsNDQuNzQ0LDAgICBjMTIuMzY1LDEyLjM1NCwxMi4zNjUsMzIuMzkyLDAsNDQuNzUxTDI0OC4yOTIsMzQ1LjQ0OUMyNDIuMTE1LDM1MS42MjEsMjM0LjAxOCwzNTQuNzA2LDIyNS45MjMsMzU0LjcwNnoiIGZpbGw9IiM4MDgwODAiLz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PC9zdmc+);
+    }
+
+  }
+
+}

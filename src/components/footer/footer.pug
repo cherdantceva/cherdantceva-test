@@ -1,0 +1,10 @@
+include ../button/button
+
+mixin footer(args)
+    .footer&attributes(attributes)
+        .page-container
+            .footer__button-container
+                +button({title: 'Удалить'})
+                +button({title: 'Сохранить'})
+                +button({title: 'Отменить'})
+        

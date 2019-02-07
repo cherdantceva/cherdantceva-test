@@ -1,0 +1,13 @@
+-
+    function generateChildInstance(attributes, childInstanceName) {
+        return `${attributes['data-inst']}:${childInstanceName}`;
+    }
+
+    function splitToChunks(list, length) {
+        let i, j;
+        res = [];
+        for (i=0, j=list.length; i < j; i+=length) {
+            res.push(list.slice(i, i+length));
+        }
+        return res;
+    }

@@ -1,0 +1,21 @@
+mixin table-row(args)
+    block
+    .table-row&attributes(attributes)
+        .table-row__part.table-row__part-1
+            .table-row__check
+                label().table-row__check-label
+                    input(type="checkbox").table-row__check-input
+                    .table-row__check-bg
+
+        .table-row__part.table-row__part-2
+            .table-row__main
+                .table-row__cell.table-row__cell-1
+                    -createBlock('cell-1')
+                .table-row__cell.table-row__cell-2
+                    -createBlock('cell-2')
+                .table-row__cell.table-row__cell-3
+                    -createBlock('cell-3')
+                .table-row__cell.table-row__cell-4
+                    -createBlock('cell-4')
+
+    -clearBlocks(['cell-1', 'cell-2', 'cell-3', 'cell-4'])

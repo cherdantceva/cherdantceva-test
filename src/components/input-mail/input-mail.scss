@@ -1,0 +1,8 @@
+.input-mail {
+
+  &__field {
+    @include font-2;
+    @include input-style;
+  }
+    
+}

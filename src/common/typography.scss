@@ -1,0 +1,41 @@
+@import './fonts.scss';
+
+@mixin title-1 {
+    font-family: Roboto-Medium;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: normal;
+    margin: 0;
+
+  //@media (max-height: $breakpoint-1){
+  //  font-size: 38px;
+  //}
+  //
+  //@media (max-width: $breakpoint-1){
+  //  font-size: 38px;
+  //}
+}
+
+@mixin title-2 {
+  font-family: Roboto-Medium;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: normal;
+  margin: 0;
+}
+
+@mixin font-1 {
+  font-family: Roboto;
+  line-height: 16px;
+  font-size: 12px;
+}
+
+@mixin font-2 {
+  font-family: Roboto;
+  line-height: 16px;
+  font-size: 11px;
+}
+
+@mixin font-3 {
+  font-size: 10px;
+}

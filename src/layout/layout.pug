@@ -1,0 +1,23 @@
+include ../common/mixins
+include ../common/multiple-blocks
+include ../common/helpers
+include ../components/header/header
+include ../components/footer/footer
+
+
+
+
+doctype html
+html
+    head
+        link(rel='stylesheet' href='../../common/common.scss')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(charset='utf-8')
+        meta(name='msapplication-TileColor', content='#da532c')
+        meta(name='theme-color', content='#ffffff')
+    body
+        +header({'data-inst': 'header'})
+        form.body__container
+            .content
+                block content
+            +footer({'data-inst': 'footer'})
