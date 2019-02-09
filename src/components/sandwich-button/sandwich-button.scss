@@ -5,6 +5,10 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
+  @media (min-width: $breakpoint-2){
+    display: none;
+  }
 
   &__lines {
     display: flex;
@@ -15,6 +19,7 @@
   }
 
   &__line {
+    background-color: white;
     height: 2px;
     border-radius: 1px;
     transition: 0.3s background-color ease;

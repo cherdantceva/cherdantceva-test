@@ -1,68 +1,23 @@
 .header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top:0;
-  background: white;
-  z-index: 10;
-
-  &__part-container {
-    display: flex;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top:0;
+	background: rgba($color-blue-1, 0.9);
+	z-index: 10;
+  padding: #{smooth-value(5px, 36px, $breakpoint-2, $breakpoint-4, 'w')} 0;
+  @media (min-width: $breakpoint-3){
+    padding: 36px 0;
   }
-
-  &__part {
-    margin: 8px 0;
-
-    &_left,
-    &_right {
-      flex: 0 0 25%;
-      max-width: 25%;
-    }
-
-    &_main {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
+  
+  @media (max-width: $breakpoint-2 - 1){
+    padding: 5px 0;
   }
-
-  &__icon-panel {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 4px;
-    cursor: pointer;
-
-    svg {
-      fill: $color-gray-4;
-      transform: 0.3s fill ease-in;
-    }
-
-    &:hover svg {
-      fill: $color-gray-3;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &_fullscreen {
-      height: 21px;
-      width: 21px;
-    }
-
-    &_information {
-      height: 24px;
-      width: 24px;
-    }
-  }
-
-
-    
+	
+	
+	&__page-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
 }

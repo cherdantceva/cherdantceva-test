@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  cursor: pointer;
+  @include title-1;
+  
+  &__text {
+    text-transform: uppercase;
+    color: white;
+    
+    &_color {
+      color: $color-lightblue-5;
+    }
+  }
+}

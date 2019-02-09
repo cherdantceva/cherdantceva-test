@@ -1,0 +1,9 @@
+include ../sandwich-button/sandwich-button
+
+mixin navigation(navigation)
+    nav.navigation&attributes(attributes)
+        +sandwich-button
+        each item_navigation in navigation
+            a.navigation__item(href=item_navigation.link)!= item_navigation.anchor
+
+        

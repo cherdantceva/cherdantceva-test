@@ -1,8 +1,6 @@
 include ../logo/logo
 include ../navigation/navigation
 
-
-
 mixin header(args)
     .header&attributes(attributes)
         -
@@ -25,7 +23,7 @@ mixin header(args)
             }
 
             ];
-        .page-container
+        .page-container.header__page-container
             +logo
             +navigation(navigation)
 
