@@ -1,0 +1,55 @@
+.top {
+  position: relative;
+  padding-top: calc(#{smooth-value(10px, 72px, $breakpoint-2, $breakpoint-4, 'w')} + 28px);
+  
+  @media (min-width: $breakpoint-3){
+    padding-top: 100px;
+  }
+  
+  @media (max-width: $breakpoint-2 - 1){
+    padding-top: 42px;
+  }
+  
+  &__bg {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 1;
+    
+    @media (min-width: $breakpoint-2) {
+      max-width: 65%;
+    }
+  }
+  
+  &__infoblock-1 {
+    padding: #{smooth-value(30px, 54px, $breakpoint-2, $breakpoint-4, 'w')} 0;
+  
+    @media (min-width: $breakpoint-3){
+      padding: 54px 0;
+    }
+  
+    @media (max-width: $breakpoint-2){
+      padding: 30px 0;
+    }
+  }
+  
+}
+

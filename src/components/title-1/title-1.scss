@@ -1,0 +1,10 @@
+.title-1 {
+  @include title-2;
+  text-transform: uppercase;
+  color: $color-blue-2;
+  
+  &_color {
+    color: $color-lighblue;
+  }
+    
+}

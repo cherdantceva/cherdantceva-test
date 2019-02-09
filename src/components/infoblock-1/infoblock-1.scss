@@ -1,0 +1,30 @@
+.infoblock-1 {
+  @include font-3;
+  color: $color-text-1;
+  
+  &__title {
+    @include font-2;
+  }
+  
+  &__list {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+    list-style: none;
+  }
+  
+  &__list-item {
+    padding-left: 10px;
+    position: relative;
+    margin: 0.5em 0;
+    
+    &:before {
+      position: absolute;
+      content: '–';
+      font-size: 0.7em;
+      top: 0.4em;
+      display: block;
+      left: 0;
+    }
+  }
+  
+}

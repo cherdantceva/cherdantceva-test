@@ -37,9 +37,25 @@ body {
 
 .page-container {
   width: 100%;
-  max-width: $breakpoint-5;
-  padding: 0 8px;
+  max-width: $breakpoint-4;
+  padding-left: $gutter;
+  padding-right: $gutter;
   margin: 0 auto;
+}
+
+.page-container-v {
+  padding-top: #{smooth-value(60px, 132px, $breakpoint-2, $breakpoint-4, 'w')};
+  padding-bottom:  #{smooth-value(60px, 140px, $breakpoint-2, $breakpoint-4, 'w')};
+
+  @media (min-width: $breakpoint-3){
+    padding-top: 132px;
+    padding-bottom:  140px;
+  }
+  
+  @media (max-width: $breakpoint-2){
+    padding-top: 60px;
+    padding-bottom:  60px;
+  }
 }
 
 .scroll-container {

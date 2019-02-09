@@ -1,0 +1,23 @@
+include ../title-1/title-1
+include ../infoblock-1/infoblock-1
+
+mixin top(args)
+    -
+        var top_list = [
+            {
+            "list_title": "At&nbsp;vero eos et&nbsp;accusamus et&nbsp;iusto odio dignissimos ducimus!",
+            "items": [
+                "Totam rem aperiam eaque ipsa",
+                "Sit voluptatem accusantium doloremque laudantium",
+                "Sed ut&nbsp;perspiciatis, unde omnis iste natus error"
+                ]
+            }
+        ];
+    .top&attributes(attributes)
+        .top__bg
+            img.top__bg-img(src='../../components/top/images/top-1.jpg')
+        .page-container.page-container-v
+            .top__content
+                +title-1({'title': '<span class="title-1_color">Lorem ipsum</span> dolor sit amet consectetur <span class="title-1_color">adipiscing</span>'})
+                +infoblock-1(top_list).top__infoblock-1
+
