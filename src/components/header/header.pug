@@ -1,18 +1,33 @@
-include ../sandwich-button/sandwich-button
-include ../page-title/page-title
+include ../logo/logo
+include ../navigation/navigation
+
+
 
 mixin header(args)
     .header&attributes(attributes)
-        .page-container
-            .header__part-container
-                .header__part.header__part_left
-                    +sandwich-button
-                .header__part.header__part_main
-                    +page-title({title: 'Пользователи', counter: '5'})
-                .header__part.header__part_right
-                    .header__icon-panel
-                        button.header__icon
-                           +svg('../../components/header/images/fullscreen.svg', {class: 'header__icon_fullscreen'})
+        -
+            var navigation = [
+            {
+            "anchor": "Бизнес",
+            "link": "#"
+            },
+            {
+            "anchor": "О&nbsp;нас",
+            "link": "#"
+            },
+            {
+            "anchor": "Цены",
+            "link": "#"
+            },
+            {
+            "anchor": "Оформить заказ",
+            "link": "#"
+            }
 
-                        a(href='#').header__icon
-                            +svg('../../components/header/images/information.svg', {class: 'header__icon_information'})
+            ];
+        .page-container
+            +logo
+            +navigation(navigation)
+
+
+
