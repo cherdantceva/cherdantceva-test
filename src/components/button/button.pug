@@ -1,0 +1,6 @@
+mixin button(button)
+    #{button.type}.button(class=`button_${button.color_type}`)&attributes(attributes)
+        span!= button.text
+
+
+        

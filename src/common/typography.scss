@@ -32,12 +32,27 @@
   }
 }
 
+@mixin title-3 {
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 900;
+  font-size: #{smooth-value(22px, 36px, $breakpoint-2, $breakpoint-4, 'w')};
+  line-height: 1;
+  margin: 0;
+  
+  @media (min-width: $breakpoint-3){
+    font-size: 36px;
+  }
+  
+  @media (max-width: $breakpoint-2 - 1){
+    font-size: 22px;
+  }
+}
+
 @mixin font-1 {
   font-family: 'Lato', Arial, sans-serif;
   font-size: #{smooth-value(11px, 13px, $breakpoint-2, $breakpoint-4, 'w')};
   font-weight: 600;
   letter-spacing: 0.025em;
-  margin: 0;
   
   @media (min-width: $breakpoint-3){
     font-size: 13px
@@ -65,6 +80,16 @@
 }
 
 @mixin font-3 {
-  @include font-2;
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.2;
+  font-size: #{smooth-value(14px, 18px, $breakpoint-2, $breakpoint-4, 'w')};
   font-weight: normal;
+  
+  @media (min-width: $breakpoint-3){
+    font-size: 18px
+  }
+  
+  @media (max-width: $breakpoint-2){
+    font-size: 14px;
+  }
 }

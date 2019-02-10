@@ -1,9 +1,9 @@
 .top {
   position: relative;
-  padding-top: calc(#{smooth-value(10px, 72px, $breakpoint-2, $breakpoint-4, 'w')} + 28px);
+  padding-top: calc(#{smooth-value(10px, 72px, $breakpoint-2, $breakpoint-4, 'w')} + 40px);
   
   @media (min-width: $breakpoint-3){
-    padding-top: 100px;
+    padding-top: 110px;
   }
   
   @media (max-width: $breakpoint-2 - 1){
@@ -12,6 +12,7 @@
   
   &__bg {
     position: absolute;
+    z-index: -1;
     height: 100%;
     top: 0;
     bottom: 0;
@@ -40,14 +41,27 @@
   }
   
   &__infoblock-1 {
-    padding: #{smooth-value(30px, 54px, $breakpoint-2, $breakpoint-4, 'w')} 0;
+    padding: #{smooth-value(30px, 58px, $breakpoint-2, $breakpoint-4, 'w')} 0;
   
     @media (min-width: $breakpoint-3){
-      padding: 54px 0;
+      padding: 58px 0;
     }
   
     @media (max-width: $breakpoint-2){
       padding: 30px 0;
+    }
+  }
+  
+  &__button-contain {
+    display: flex;
+    margin-bottom: 50px;
+  }
+  
+  &__button {
+    width: 182px;
+    margin-right: 28px;
+    &:last-child {
+      margin-right: 0;
     }
   }
   

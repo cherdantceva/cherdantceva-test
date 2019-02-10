@@ -1,0 +1,24 @@
+.button {
+  display: block;
+  outline: 0;
+  border: 0;
+  @include font-1;
+  text-transform: uppercase;
+  padding: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  
+  &_blue {
+    color: white;
+    background-color: $color-lighblue;
+    border: 1px solid white;
+  }
+  
+  &_white {
+    color: $color-text-1;
+    background-color: white;
+    border: 1px solid $color-text-1;
+  }
+    
+}

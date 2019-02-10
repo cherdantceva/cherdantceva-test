@@ -1,0 +1,12 @@
+.title-2 {
+  @include title-3;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 0.6em;
+  
+  &_color {
+    color: $color-lighblue;
+  }
+    
+}

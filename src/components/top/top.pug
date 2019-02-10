@@ -1,5 +1,6 @@
 include ../title-1/title-1
 include ../infoblock-1/infoblock-1
+include ../button/button
 
 mixin top(args)
     -
@@ -13,6 +14,20 @@ mixin top(args)
                 ]
             }
         ];
+
+    -
+        var buttons = [
+            {
+                "type": "button",
+                "text": "Заказать",
+                "color_type": "blue"
+            },
+            {
+                "type": "a",
+                "text": "Подробнее",
+                "color_type": "white"
+            }
+        ];
     .top&attributes(attributes)
         .top__bg
             img.top__bg-img(src='../../components/top/images/top-1.jpg')
@@ -20,4 +35,9 @@ mixin top(args)
             .top__content
                 +title-1({'title': '<span class="title-1_color">Lorem ipsum</span> dolor sit amet consectetur <span class="title-1_color">adipiscing</span>'})
                 +infoblock-1(top_list).top__infoblock-1
+            .top__button-contain
+                each button in buttons
+                    +button(button).top__button
+
+
 

@@ -48,7 +48,7 @@ body {
   padding-bottom:  #{smooth-value(60px, 140px, $breakpoint-2, $breakpoint-4, 'w')};
 
   @media (min-width: $breakpoint-3){
-    padding-top: 132px;
+    padding-top: 120px;
     padding-bottom:  140px;
   }
   
