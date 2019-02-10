@@ -1,9 +1,13 @@
 include ../title-2/title-2
 include ../subtitle/subtitle
+include ../form/form
+
 
 mixin send(args)
     .send&attributes(attributes)
         .page-container.page-container-v
             +title-2({'title': 'Оформление <span class="title-2_color">Заказа</span>'})
             +subtitle({'subtitle': 'Перед заполнением формы ознакомьтесь с&nbsp;нашей схемой работы!'})
-        
+            +form
+
+

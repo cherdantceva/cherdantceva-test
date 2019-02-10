@@ -1,3 +1,62 @@
+include ../select/select
+include ../input/input
+include ../range/range
+include ../input-file/input-file
+
 mixin form(args)
-    .form&attributes(attributes)
-        
+    -
+        var inputs = [
+        {
+        "type": "email",
+        "placeholder": "Ваш e-mail",
+        },
+        {
+        "type": "text",
+        "placeholder": "Ваше имя",
+        }
+        ];
+
+    -
+        var select_options = [
+        {
+        "placeholder": "Выберите тип системы",
+        "options": ["Тип системы 1", "Тип системы 2", "Тип системы 3", "Тип системы 4", "Тип системы 5", "Тип системы 6", "Тип системы 7",]
+        }
+        ];
+
+    -
+        var range = [
+        {
+        "text": "Sed ut perspiciatis, unde omnis iste natus",
+        }
+        ];
+
+    -
+        var input_file = [
+        {
+        "type": "file",
+        }
+        ];
+
+    -
+        var buttons = [
+        {
+        "type": "button",
+        "text": "Отправить",
+        "color_type": "blue"
+        }
+        ];
+
+    form.form&attributes(attributes)
+        .form__input.form__input-select
+            +select(select_options)
+        each input in inputs
+            .form__input
+                +input(input)
+        .form__input.form__input-range
+            +range(range)
+        .form__input.form__input-file
+            +input-file(input_file)
+        .form__button-container
+            each button in buttons
+                +button(button).form__button

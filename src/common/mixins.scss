@@ -11,10 +11,10 @@
 @mixin input-style {
   @include input-normal;
   width: 100%;
-  padding: $gutter/2;
-  border: 1px solid $color-gray-2;
-  border-radius: 4px;
-  background: white;
+  padding: 7px 16px;
+  border: 1px solid white;
+  border-radius: 3px;
+  background: $color-lightgray-3;
 }
 
 @mixin checkbox {

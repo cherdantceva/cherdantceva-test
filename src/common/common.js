@@ -21,3 +21,7 @@ import '../components/subtitle/subtitle';
 import '../components/features/features';
 import '../components/feature/feature';
 import '../components/form/form';
+import '../components/input/input';
+import '../components/select/select';
+import '../components/range/range';
+import '../components/input-file/input-file';
