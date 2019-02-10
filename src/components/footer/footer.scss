@@ -1,3 +1,91 @@
 .footer {
-
+  height: 80px;
+  background-color: $color-blue-4;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  
+  @media (max-width: $breakpoint-3 - 1) {
+    height: auto;
+    padding: 1em 0 0.5em;
+  }
+  
+  &__page-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    @media (max-width: $breakpoint-3 - 1) {
+      flex-direction: column;
+    }
+  }
+  &__part {
+    display: flex;
+    @media (max-width: $breakpoint-3 - 1) {
+      margin-bottom: 0.5em;
+    }
+  }
+  
+  &__part-copy {
+    @include  font-5;
+    color: white;
+    width: 30%;
+    @media (max-width: $breakpoint-3 - 1) {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  }
+  
+  &__part-money {
+    width: 36%;
+    justify-content: space-around;
+    @media (max-width: $breakpoint-3 - 1) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  &__part-social {
+    width: 28.12%;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-3 - 1) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    @include font-5;
+    color: white;
+   
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $color-lighblue;
+      margin-right: 10px;
+      @media (max-width: $breakpoint-3 - 1) {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+      }
+    }
+    
+    &_gray {
+      color: $color-text-3;
+    }
+  
+    @media (max-width: $breakpoint-3 - 1) {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  
+  
+  
 }

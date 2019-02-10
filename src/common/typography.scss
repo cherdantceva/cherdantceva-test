@@ -2,7 +2,7 @@
 
 @mixin title-1 {
   font-family: 'Raleway', Arial, sans-serif;
-  font-size: #{smooth-value(20px, 28px, $breakpoint-2, $breakpoint-4, 'w')};
+  font-size: #{smooth-value(24px, 28px, $breakpoint-2, $breakpoint-4, 'w')};
   line-height: 1;
   font-weight: 800;
   margin: 0;
@@ -12,7 +12,7 @@
   }
   
   @media (max-width: $breakpoint-2){
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -102,6 +102,21 @@
   
   @media (min-width: $breakpoint-3){
     font-size: 16px
+  }
+  
+  @media (max-width: $breakpoint-2){
+    font-size: 12px;
+  }
+}
+
+@mixin font-5 {
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.1;
+  font-size: #{smooth-value(12px, 14px, $breakpoint-2, $breakpoint-4, 'w')};
+  font-weight: normal;
+  
+  @media (min-width: $breakpoint-3){
+    font-size: 14px
   }
   
   @media (max-width: $breakpoint-2){

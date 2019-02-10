@@ -1,2 +1,50 @@
 mixin footer(args)
+    -
+        var icons_money = [
+        {
+        "text": "Qiwi&nbsp;wallet",
+        "icon": "../../components/footer/images/qiwi.svg",
+        "link": "#",
+        "type": "footer__link_qiwi"
+        },
+        {
+        "text": "Yandex&nbsp;Money",
+        "icon": "../../components/footer/images/yandexmoney.svg",
+        "link": "#",
+        "type": "footer__link_yandex"
+        },
+        {
+        "text": "Web&nbsp;Money",
+        "icon": "../../components/footer/images/webmoney.svg",
+        "link": "#",
+        "type": "footer__link_webmoney"
+        }
+        ];
+
+    -
+        var icons_social = [
+        {
+        "text": "infonfo@ipsum228.com",
+        "icon": "../../components/footer/images/envelope.svg",
+        "link": "mailto:info@ipsum228.com",
+        "type": "footer__link_email"
+        },
+        {
+        "text": "Мы&nbsp;вконтакте",
+        "icon": "../../components/footer/images/vk.svg",
+        "type": "footer__link_vk"
+        }
+        ];
     .footer&attributes(attributes)
+        .page-container.footer__page-container
+            .footer__part.footer__part-copy © 2018 «LOREMIPSUM.NET» Все права защищены.
+            .footer__part.footer__part-money
+                each icon in icons_money
+                    a(href=icon.link class= icon.type).footer__link.footer__link_gray
+                        +svg(icon.icon)
+                        span!= icon.text
+            .footer__part.footer__part-social
+                each icon in icons_social
+                    a(href=icon.link class= icon.type).footer__link
+                        +svg(icon.icon)
+                        span!= icon.text

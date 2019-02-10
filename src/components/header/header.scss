@@ -5,13 +5,13 @@
 	top:0;
 	background: rgba($color-blue-1, 0.9);
 	z-index: 10;
-  padding: #{smooth-value(5px, 36px, $breakpoint-2, $breakpoint-4, 'w')} 0;
+  padding: #{smooth-value(10px, 36px, $breakpoint-2, $breakpoint-4, 'w')} 0;
   @media (min-width: $breakpoint-3){
     padding: 36px 0;
   }
   
   @media (max-width: $breakpoint-2 - 1){
-    padding: 5px 0;
+    padding: 10px 0;
   }
 	
 	
