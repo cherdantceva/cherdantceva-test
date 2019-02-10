@@ -6,7 +6,6 @@ class Select extends Component {
     constructor(nRoot, componentName) {
         super(nRoot, componentName);
         const select = this.nRoot;
-        console.log(select);
         const choices = new Choices(select, {
             itemSelectText: '',
             searchEnabled: false

@@ -96,7 +96,6 @@ export const downloadImage = nImage => {
 
 export const downloadImages = () => {
     const nImages = [...document.querySelectorAll('img[data-src]')];
-    console.log(nImages);
     return Promise.all(nImages.map(nImage => downloadImage(nImage))).then();
 };
 
@@ -173,6 +172,29 @@ export const waitForEvent = (node, eventName) => {
     return new Promise((resolve, reject) => {
         node.addEventListener(eventName, resolve);
     });
+};
+
+export const splitContentByWords = node => {
+    let newContent = node.innerHTML.trim();
+    node.innerHTML = newContent;
+    const res = [];
+    [...node.childNodes].forEach(subNode => {
+        if (subNode.nodeType === Node.ELEMENT_NODE) {
+            res.push(subNode);
+            return;
+        }
+        const words = subNode.textContent.split(' ');
+        words.forEach(word => {
+            const nWordWrapper = document.createElement('span');
+            nWordWrapper.style.display = 'inline-block';
+            nWordWrapper.innerHTML = `${word} `;
+            res.push(nWordWrapper);
+        });
+    });
+    node.innerHTML = '';
+    res.forEach(subNode => {
+        node.appendChild(subNode);
+    })
 };
 
 export const objFiteIE = () => {
