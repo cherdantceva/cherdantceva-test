@@ -86,7 +86,7 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &:focus, &:active {
+  &:focus, &:active, &:visited {
     color: inherit;
   }
 }

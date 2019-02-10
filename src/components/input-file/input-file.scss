@@ -12,6 +12,8 @@
     z-index: 0;
   }
   
+ 
+  
   &__label {
     @include input-normal;
     @include input-style;
@@ -19,7 +21,19 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    cursor: pointer;
     border: 2px solid $color-lighblue;
+    transition: 0.3s color ease-in-out 0.1s, 0.3s border ease-in-out 0.2s, 0.3s background ease-in-out;
+    &:hover {
+      background: $color-lighblue;
+      border-color: white;
+      color: white;
+      
+      .input-file__icon {
+        stroke: white;
+        fill: white
+      }
+    }
   }
   
   &__icon {
@@ -28,6 +42,9 @@
     stroke: #272733;
     stroke-width: 2px;
     margin-right: 0.6em;
+    transition: 0.3s stroke ease-in-out 0.1s;
   }
+  
+  
     
 }

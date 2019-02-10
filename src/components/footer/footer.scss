@@ -41,6 +41,7 @@
   &__part-money {
     width: 36%;
     justify-content: space-around;
+    color: $color-text-3;
     @media (max-width: $breakpoint-3 - 1) {
       width: 100%;
       justify-content: center;
@@ -50,6 +51,7 @@
   &__part-social {
     width: 28.12%;
     justify-content: space-between;
+    color: white;
     @media (max-width: $breakpoint-3 - 1) {
       width: 100%;
       justify-content: center;
@@ -74,14 +76,41 @@
       }
     }
     
-    &_gray {
-      color: $color-text-3;
-    }
   
     @media (max-width: $breakpoint-3 - 1) {
       margin-right: 15px;
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+  
+  &__link-text {
+    position: relative;
+    display: block;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background: white;
+      transition: 0.3s width ease-in-out;
+    }
+    
+    &_gray {
+      &:after {
+        background: $color-text-3;
+      }
+    }
+  }
+  
+  &__link {
+    &:hover {
+      .footer__link-text:after {
+        width: 105%;
       }
     }
   }

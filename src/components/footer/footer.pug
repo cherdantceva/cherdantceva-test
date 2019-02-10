@@ -32,6 +32,7 @@ mixin footer(args)
         {
         "text": "Мы&nbsp;вконтакте",
         "icon": "../../components/footer/images/vk.svg",
+        "link": "#",
         "type": "footer__link_vk"
         }
         ];
@@ -40,11 +41,11 @@ mixin footer(args)
             .footer__part.footer__part-copy © 2018 «LOREMIPSUM.NET» Все права защищены.
             .footer__part.footer__part-money
                 each icon in icons_money
-                    a(href=icon.link class= icon.type).footer__link.footer__link_gray
+                    a(href=icon.link class= icon.type).footer__link
                         +svg(icon.icon)
-                        span!= icon.text
+                        span.footer__link-text.footer__link-text_gray!= icon.text
             .footer__part.footer__part-social
                 each icon in icons_social
                     a(href=icon.link class= icon.type).footer__link
                         +svg(icon.icon)
-                        span!= icon.text
+                        span.footer__link-text!= icon.text

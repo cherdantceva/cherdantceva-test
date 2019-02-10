@@ -64,20 +64,20 @@
       }
       
       svg {
-        width: #{smooth-value(26px,45px, $breakpoint-2, $breakpoint-4, 'w')};
-        height: #{smooth-value(26px,45px, $breakpoint-2, $breakpoint-4, 'w')};
+        width: #{smooth-value(26px,36px, $breakpoint-2, $breakpoint-4, 'w')};
+        height: #{smooth-value(26px,36px, $breakpoint-2, $breakpoint-4, 'w')};
         stroke: white;
         stroke-width: 3px;
         fill: white;
   
         @media (min-width: $breakpoint-3){
-          width: 45px;
-          height: 45px;
+          width: 36px;
+          height: 36px;
         }
   
         @media (max-width: $breakpoint-2){
-          width: 26px;
-          height: 26px;
+          width: 36px;
+          height: 36px;
         }
       }
     }
