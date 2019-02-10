@@ -1,0 +1,6 @@
+mixin select(select_options)
+    select(name='', data-select).select.select__field
+        each options in select_options
+            option(placeholder)!= options.placeholder
+            each option in options.options
+                option!= option
