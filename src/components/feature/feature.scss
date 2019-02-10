@@ -1,3 +1,95 @@
 .feature {
+  flex: 1 1 13%;
+  max-width: 13%;
+  
+  @media (max-width: $breakpoint-2 - 1) {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 1.8em;
+  }
+  
+    &:last-child &__points {
+      display: none;
+    }
+  
+    &__top {
+      margin-bottom: 0.8em;
+      position: relative;
+  
+      @media (max-width: $breakpoint-2 - 1) {
+        margin-bottom: 0.4em;
+      }
+    }
+  
+    &__points {
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      width: 68%;
+      justify-content: space-between;
+  
+      @media (max-width: $breakpoint-2 - 1) {
+        display: none;
+      }
+    }
+  
+    &__point {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: $color-text-2;
+    }
+  
+  &__img {
+      width: #{smooth-value(80px,100px, $breakpoint-2, $breakpoint-4, 'w')};
+      height: #{smooth-value(80px,100px, $breakpoint-2, $breakpoint-4, 'w')};
+      border-radius: 50%;
+      background: $color-lighblue;
+      border: 5px solid $color-lighblue-4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+  
+      @media (min-width: $breakpoint-3){
+        width: 100px;
+        height: 100px;
+      }
     
+      @media (max-width: $breakpoint-2){
+        width: 80px;
+        height: 80px;
+      }
+      
+      svg {
+        width: #{smooth-value(26px,45px, $breakpoint-2, $breakpoint-4, 'w')};
+        height: #{smooth-value(26px,45px, $breakpoint-2, $breakpoint-4, 'w')};
+        stroke: white;
+        stroke-width: 3px;
+        fill: white;
+  
+        @media (min-width: $breakpoint-3){
+          width: 45px;
+          height: 45px;
+        }
+  
+        @media (max-width: $breakpoint-2){
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+  
+    &__bottom {
+      text-align: center;
+      @include font-4;
+      color: white;
+      margin-left: -1em;
+      margin-right: -1em;
+    }
+  
+  
+  
 }

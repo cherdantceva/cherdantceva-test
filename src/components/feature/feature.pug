@@ -1,3 +1,14 @@
-mixin feature(args)
+mixin feature(feature)
     .feature&attributes(attributes)
+        .feature__top
+            .feature__points
+                - for(var i = 0; i < 5; i++)
+                    .feature__point
+            .feature__img
+                +svg(feature.icon)
+        .feature__bottom!= feature.text
+
+
+
+
         

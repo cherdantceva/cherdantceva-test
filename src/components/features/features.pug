@@ -1,3 +1,44 @@
+include ../feature/feature
+
 mixin features(args)
+    -
+        var features = [
+        {
+        "icon": "../../components/features/images/search.svg",
+        "text": "Lorem ipsum dolor sit&nbsp;amet",
+        },
+        {
+        "icon": "../../components/features/images/percent.svg",
+        "text": "Сonsecteturadipiscing elit",
+        },
+        {
+        "icon": "../../components/features/images/file.svg",
+        "text": "Sed do eiusmod tempor",
+        },
+        {
+        "icon": "../../components/features/images/envelope.svg",
+        "text": "Esse cillum dolore eu&nbsp;fugiat",
+        },
+        {
+        "icon": "../../components/features/images/bill.svg",
+        "text": "Excepteur sint occaecat cupidatat non proident",
+        }
+        ];
+
+    -
+        var buttons = [
+        {
+        "type": "button",
+        "text": "Заказать",
+        "color_type": "blue"
+        },
+        {
+        "type": "a",
+        "text": "Подробнее",
+        "color_type": "white"
+        }
+        ];
     .features&attributes(attributes)
-        
+
+        each feature in features
+            +feature(feature)

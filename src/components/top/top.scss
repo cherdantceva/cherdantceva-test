@@ -55,6 +55,10 @@
   &__button-contain {
     display: flex;
     margin-bottom: 50px;
+  
+    @media (max-width: $breakpoint-2 - 1){
+      margin-bottom: 15px;
+    }
   }
   
   &__button {

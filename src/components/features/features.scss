@@ -1,3 +1,15 @@
 .features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: #{smooth-value(30px, 78px, $breakpoint-2, $breakpoint-4, 'w')} 0;
+  
+  @media (min-width: $breakpoint-3){
+    padding: 78px 0;
+  }
+  
+  @media (max-width: $breakpoint-2){
+    padding: 30px 0 10px;
+  }
     
 }
