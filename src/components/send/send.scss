@@ -1,5 +1,31 @@
 .send {
   @include font-3;
-  background: $color-blue-2;
+  background: $color-blue-5;
+  position: relative;
+  overflow: hidden;
+  &__bg {
+    position: absolute;
+    height: 110%;
+    top: -5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+  }
+  
+  &__page-container {
+    position: relative;
+    z-index: 1;
+  }
     
 }

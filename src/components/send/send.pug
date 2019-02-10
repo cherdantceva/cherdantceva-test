@@ -6,7 +6,9 @@ include ../features/features
 
 mixin send(args)
     .send&attributes(attributes)
-        .page-container.page-container-v
+        .send__bg
+            img.send__bg-img(src='../../components/send/images/map.jpg')
+        .page-container.page-container-v.send__page-container
             +title-2({'title': 'Оформление <span class="title-2_color">Заказа</span>'})
             +subtitle({'subtitle': 'Перед заполнением формы ознакомьтесь с&nbsp;нашей схемой работы!'})
             +features

@@ -5,6 +5,8 @@ class Top extends Component {
         super(nRoot, componentName);
     }
 
+
+
     destroy() {
 
     }
