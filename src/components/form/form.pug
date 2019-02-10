@@ -32,9 +32,12 @@ mixin form(args)
         ];
 
     -
-        var input_file = [
+        var input_files = [
         {
         "type": "file",
+        "id": "input-file",
+        "text": "Прикрепить файл",
+        "icon": "../../components/input-file/images/file.svg"
         }
         ];
 
@@ -47,7 +50,7 @@ mixin form(args)
         }
         ];
 
-    form.form&attributes(attributes)
+    form.form(method="post" enctype="multipart/form-data")&attributes(attributes)
         .form__input.form__input-select
             +select(select_options)
         each input in inputs
@@ -56,7 +59,7 @@ mixin form(args)
         .form__input.form__input-range
             +range(range)
         .form__input.form__input-file
-            +input-file(input_file)
+            +input-file(input_files)
         .form__button-container
             each button in buttons
-                +button(button).form__button
+                +button(button).form__button(data-button)

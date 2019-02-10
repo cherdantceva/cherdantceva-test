@@ -6,6 +6,25 @@
   &__input {
     flex: 1 0 31.6%;
     max-width: 31.6%;
+    margin-bottom: 32px;
+  }
+  
+  &__input-range {
+    flex: 1 0 65.8%;
+    max-width: 65.8%;
+  }
+  
+  &__button-container {
+    width: 100%;
+    margin: 15px 0;
+  }
+  
+  &__button {
+    flex: 1 0 31.6%;
+    max-width: 31.6%;
+    width: 31.6%;
+    height: 50px;
+    margin: 0 auto;
   }
     
 }

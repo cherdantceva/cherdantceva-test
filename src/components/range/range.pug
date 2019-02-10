@@ -1,0 +1,10 @@
+mixin range(range)
+    .range&attributes(attributes)
+        .range__content
+            each range_item in range
+                .range__text!= range_item.text
+            .range__percent
+                .range__persent-counter(data-counter) 15
+                .range__persent-symbol %
+        input.range__input(type="range" min="0" max="100" data-range)
+        

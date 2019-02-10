@@ -1,0 +1,8 @@
+mixin input-file(input_files)
+    .input-file&attributes(attributes)
+        each input_file in input_files
+            input.input-file__input(type="file" id=input_file.id)
+            label.input-file__label(for=input_file.id)
+                +svg(input_file.icon, {class: 'input-file__icon'})
+                span.input-file__text!= input_file.text
+        
