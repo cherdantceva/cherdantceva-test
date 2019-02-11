@@ -63,8 +63,145 @@ export const throttle = (func, ms, noTrailing = true) => {
     return wrapper;
 };
 
+export const innerHeight = (node) => {
+    const computedStyle = getComputedStyle(node);
+    const elementHeight = node.clientHeight;
+    const res = elementHeight - parseFloat(computedStyle.paddingTop) - parseFloat(computedStyle.paddingBottom);
+    return res < 0 ? 0 : res;
+};
 
+export const listen = (evtType, handler, env = document) => {
+    env.addEventListener(evtType, handler);
+};
+export const unlisten = (evtType, handler, env = document) =>
+    env.removeEventListener(evtType, handler);
 
+export const emit = (
+    evtType,
+    evtData,
+    shouldBubble = false,
+    env = document
+) => {
+    let evt;
+    if (typeof CustomEvent === "function") {
+        evt = new CustomEvent(evtType, {
+            detail: evtData,
+            bubbles: shouldBubble
+        });
+    } else {
+        evt = document.createEvent("CustomEvent");
+        evt.initCustomEvent(evtType, shouldBubble, false, evtData);
+    }
+    env.dispatchEvent(evt);
+};
+
+export const isFunction = (obj) => {
+    return !!(obj && obj.constructor && obj.call && obj.apply);
+};
+
+export const delay = (ms) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms);
+    });
+};
+
+export const getCSSValue = (nElement, property) => {
+    const computedStyle = getComputedStyle(nElement);
+    return computedStyle[property];
+};
+
+export const requestAnimationFrame = () => {
+    return new Promise((resolve, reject) => {
+        requestAnimationFrame(resolve);
+    });
+};
+
+export const normalizeWheel = event => {
+    let sX = 0;
+    let sY = 0;
+    let pX = 0;
+    let pY = 0;
+
+    if ("detail" in event) {
+        sY = event.detail;
+    }
+    if ("wheelDelta" in event) {
+        sY = -event.wheelDelta / 120;
+    }
+    if ("wheelDeltaY" in event) {
+        sY = -event.wheelDeltaY / 120;
+    }
+    if ("wheelDeltaX" in event) {
+        sX = -event.wheelDeltaX / 120;
+    }
+
+    if ("axis" in event && event.axis === event.HORIZONTAL_AXIS) {
+        sX = sY;
+        sY = 0;
+    }
+
+    pX = sX * 10;
+    pY = sY * 10;
+
+    if ("deltaY" in event) {
+        pY = event.deltaY;
+    }
+    if ("deltaX" in event) {
+        pX = event.deltaX;
+    }
+
+    if ((pX || pY) && event.deltaMode) {
+        if (event.deltaMode === 1) {
+            pX *= 40;
+            pY *= 40;
+        } else {
+            pX *= 800;
+            pY *= 800;
+        }
+    }
+
+    if (pX && !sX) {
+        sX = pX < 1 ? -1 : 1;
+    }
+    if (pY && !sY) {
+        sY = pY < 1 ? -1 : 1;
+    }
+
+    return {
+        spinX: sX,
+        spinY: sY,
+        pixelX: pX,
+        pixelY: pY
+    };
+};
+
+export const offset = el => {
+    let rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return {
+        top: rect.top + scrollTop,
+        left: rect.left + scrollLeft,
+        bottom: rect.bottom + scrollTop,
+        right: rect.right + scrollLeft,
+    }
+};
+
+export const windowScrollTop = () => {
+    return (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
+};
+
+export const normalizeKey = event => {
+    let code;
+    if (event.key !== undefined) {
+        code = event.key;
+    } else if (event.keyIdentifier !== undefined) {
+        code = event.keyIdentifier;
+    } else if (event.keyCode !== undefined) {
+        code = event.keyCode;
+    }
+    return code;
+};
 
 export const loadImage = nImage => {
     const tmpImg = new Image();
@@ -109,6 +246,21 @@ export const destroy = nRoot => {
     Component.registeredComponents.forEach(componentClass => {
         componentClass.destroy(nRoot);
     });
+};
+
+export const nodesFromHTML = html => {
+    const nodes = [...document.createRange().createContextualFragment(html).childNodes];
+    const nContainer = document.createElement('div');
+    nodes.forEach(node => nContainer.appendChild(node));
+    initialize(nContainer);
+    return [...nContainer.childNodes].filter(nChild => nChild.nodeType === Node.ELEMENT_NODE);
+};
+
+export const getDocumentHeight = () => {
+    const nBody = document.querySelector('body');
+    const nHtml = document.documentElement;
+    return Math.max(nBody.scrollHeight, nBody.offsetHeight,
+        nHtml.clientHeight, nHtml.scrollHeight, nHtml.offsetHeight );
 };
 
 export const createElement = html => {
@@ -167,6 +319,7 @@ export const getWindowSize = () => {
     }
 };
 
+export const isDirectEnter = () => Barba.Pjax.History.history.length === 0;
 
 export const waitForEvent = (node, eventName) => {
     return new Promise((resolve, reject) => {
@@ -197,6 +350,7 @@ export const splitContentByWords = node => {
     })
 };
 
+
 export const objFiteIE = () => {
 
     const
@@ -207,14 +361,29 @@ export const objFiteIE = () => {
 
     if(ie) {
         const nImgs = [...document.querySelectorAll('[data-obj-fit]')];
-        nImgs.forEach(img => {
-            const imgUrl = img.getAttribute('src');
+        if (nImgs) {
+            nImgs.forEach(img => {
+                const imgUrl = img.getAttribute('src'),
+                    imgDataUrl = img.dataset.src;
                 img.classList.add('featured-image');
 
-            if (imgUrl) {
-                img.parentNode.style.backgroundImage = `url(${imgUrl})`;
-                img.parentNode.classList.add('custom-object-fit')
-            }
-        })
+                if (imgUrl) {
+                    img.parentNode.style.backgroundImage = `url(${imgUrl})`;
+                    img.parentNode.classList.add('custom-object-fit')
+                } else if (imgDataUrl) {
+                    img.parentNode.style.backgroundImage = `url(${imgDataUrl})`;
+                    img.parentNode.classList.add('custom-object-fit')
+                }
+            })
+        }
+
     }
 };
+
+export const isIE = () => {
+    const
+        userAgent = window.navigator.userAgent,
+        ieReg = /msie|Trident.*rv[ :]*11\./gi,
+        ie = ieReg.test(userAgent);
+    return ie;
+}

@@ -1,0 +1,27 @@
+include ../logo/logo
+
+mixin preloader(args)
+    -
+        var logo = [
+        {
+        "text": "<span class='logo__text logo__part'>L</span>" +
+        "<span class='logo__text logo__part'>o</span>" +
+        "<span class='logo__text logo__part'>r</span>" +
+        "<span class='logo__text logo__part'>e</span>" +
+        "<span class='logo__text logo__part'>m</span>" +
+        "<span class='logo__text logo__part'>i</span>" +
+        "<span class='logo__text logo__part'>p</span>" +
+        "<span class='logo__text logo__part'>s</span>" +
+        "<span class='logo__text logo__part'>u</span>" +
+        "<span class='logo__text logo__part'>m</span>" +
+        "<span class='logo__text logo__part'>.</span>" +
+        "<span class='logo__text logo__part logo__text_color'>N</span>" +
+        "<span class='logo__text logo__part logo__text_color'>e</span>" +
+        "<span class='logo__text logo__part logo__text_color'>t</span>"
+        }
+        ];
+    .preloader&attributes(attributes)
+        .preloader.logo-container
+            +logo(logo)(data-inst='logo-preloader').logo_preloader
+
+        

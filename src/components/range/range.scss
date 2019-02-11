@@ -1,11 +1,19 @@
 .range {
   height: 46px;
+  @media (max-width: $breakpoint-2 - 1 ){
+    height: auto;
+    margin-bottom: 30px;
+  }
   
   &__content {
     display: flex;
     justify-content: space-between;
     @include font-3;
     color: white;
+  }
+  
+  &__text {
+    margin-right: 20px;
   }
   
   &__percent {

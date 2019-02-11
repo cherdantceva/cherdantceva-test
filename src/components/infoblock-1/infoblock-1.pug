@@ -1,9 +1,9 @@
 mixin infoblock-1(lists)
     .infoblock-1&attributes(attributes)
         each list in lists
-            .infoblock-1__title!= list.list_title
+            .infoblock-1__title.top-text-anim!= list.list_title
             ul.infoblock-1__list
                 each item in list.items
-                    li.infoblock-1__list-item!= item
+                    li.infoblock-1__list-item.top-text-anim!= item
 
         

@@ -5,7 +5,11 @@ import {splitContentByWords} from '../../common/helpers';
 class Top extends Component {
     constructor(nRoot, componentName) {
         super(nRoot, componentName);
+
+
     }
+
+
 
     destroy() {
 

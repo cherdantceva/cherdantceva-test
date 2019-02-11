@@ -11,4 +11,14 @@
       color: $color-lightblue-5;
     }
   }
+  
+  &_preloader {
+    @include title-4;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  &__part {
+    display: inline-block;
+  }
 }

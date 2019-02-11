@@ -9,7 +9,7 @@ mixin send(args)
         .send__bg
             img.send__bg-img(src='../../components/send/images/map.jpg')
         .page-container.page-container-v.send__page-container
-            +title-2({'title': 'Оформление <span class="title-2_color">Заказа</span>'})
+            +title-2({'title': 'Оформление <span class="title-2_color">Заказа</span>'})(data-inst='title-2')
             +subtitle({'subtitle': 'Перед заполнением формы ознакомьтесь с&nbsp;нашей схемой работы!'})
             +features
             +form

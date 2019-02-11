@@ -18,7 +18,13 @@ body {
       top: 0;
       bottom: 0;
     }
+  
+    &::-webkit-scrollbar {
+      display: none;  // Safari and Chrome
+    }
 }
+
+
 
 .body__container {
   display: flex;

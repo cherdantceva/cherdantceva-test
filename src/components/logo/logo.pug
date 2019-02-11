@@ -1,6 +1,6 @@
-mixin logo(args)
-    a.logo(href="#")&attributes(attributes)
-        span.logo__text LoremIpsum.
-            span.logo__text.logo__text_color Net
+mixin logo(logo)
+    each logo_args in logo
+        a.logo(href="#")&attributes(attributes)!= logo_args.text
+
 
         

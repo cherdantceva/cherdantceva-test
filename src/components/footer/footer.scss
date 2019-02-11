@@ -42,9 +42,33 @@
     width: 36%;
     justify-content: space-around;
     color: $color-text-3;
+    position: relative;
     @media (max-width: $breakpoint-3 - 1) {
       width: 100%;
       justify-content: center;
+    }
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 1.2em;
+      background: $color-text-3;
+      top: 50%;
+      transform: translateY(-50%);
+  
+      @media (max-width: $breakpoint-3 - 1) {
+        display: none;
+      }
+    }
+  
+    &:before {
+      left: -4%;
+    }
+  
+    &:after {
+      right: -2%;
     }
   }
   

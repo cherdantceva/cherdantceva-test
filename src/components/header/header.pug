@@ -2,7 +2,7 @@ include ../logo/logo
 include ../navigation/navigation
 
 mixin header(args)
-    .header&attributes(attributes)
+    .header&attributes(attributes)(data-inst='header')
         -
             var navigation = [
             {
@@ -23,9 +23,18 @@ mixin header(args)
             }
 
             ];
+
+        -
+            var logo = [
+            {
+            "text": "<span class='logo__text'>LoremIpsum.</span><span class='logo__text logo__text_color'>Net</span>",
+            }
+            ];
+
+
         .page-container.header__page-container
-            +logo
-            +navigation(navigation)
+                +logo(logo)(data-inst='logo-header')
+                +navigation(navigation)(data-inst='navigation-header')
 
 
 

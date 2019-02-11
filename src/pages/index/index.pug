@@ -1,8 +1,10 @@
 extends ../../layout/layout
 include ../../components/top/top
 include ../../components/send/send
+include ../../components/preloader/preloader
 
 block content
+    +preloader(data-inst='preloader')
     +top
     +send
 

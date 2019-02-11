@@ -25,3 +25,4 @@ import '../components/input/input';
 import '../components/select/select';
 import '../components/range/range';
 import '../components/input-file/input-file';
+import '../components/preloader/preloader';

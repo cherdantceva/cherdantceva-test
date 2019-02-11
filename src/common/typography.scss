@@ -32,6 +32,7 @@
   }
 }
 
+
 @mixin title-3 {
   font-family: 'Lato', Arial, sans-serif;
   font-weight: 900;
@@ -45,6 +46,23 @@
   
   @media (max-width: $breakpoint-2 - 1){
     font-size: 22px;
+  }
+}
+
+
+@mixin title-4 {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: #{smooth-value(28px, 80px, $breakpoint-1, $breakpoint-4, 'w')};
+  line-height: 1;
+  font-weight: 800;
+  margin: 0;
+  
+  @media (min-width: $breakpoint-3){
+    font-size: 80px;
+  }
+  
+  @media (max-width: $breakpoint-1){
+    font-size: 28px;
   }
 }
 
