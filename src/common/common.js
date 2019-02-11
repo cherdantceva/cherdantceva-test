@@ -2,6 +2,7 @@
 import 'babel-polyfill';
 import './configurate';
 import '../common/init';
+import svgxuse from 'svgxuse';
 
 import '../pages/main/animations';
 import '../pages/main/main';
